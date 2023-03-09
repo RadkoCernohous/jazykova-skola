@@ -1,4 +1,3 @@
-console.log("d")
 // Get the modal
 let modal = document.getElementById("myModal");
 modal.style.display = "none";
@@ -14,7 +13,6 @@ let nav = document.getElementById("nav");
 
 // Get all the images
 let images = document.querySelectorAll('.obrazekEfekt');
-console.log(images);
 
 // Loop through all the images
 images.forEach(function (img) {
