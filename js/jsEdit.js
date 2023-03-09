@@ -59,7 +59,7 @@ sipka.style.cssText = `
 
 document.body.appendChild(sipka);
 window.addEventListener('scroll', function () {
-  if ((window.scrollY > (window.innerHeight / 3)) && window.innerWidth > 2000) {
+  if ((window.scrollY > (window.innerHeight / 3)) && window.innerWidth > 1400) {
     sipka.style.display = 'block';
   } else {
     sipka.style.display = 'none';
