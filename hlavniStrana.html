@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Jazyková škola s právem státní jazykové zkušky Zlín</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="css/mdb.min.css">
+  <link rel="stylesheet" href="css/cssEdit.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Roboto+Condensed:ital,wght@0,400;0,700;1,300;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="img/logo.ico">
+	<style>
+      #intro {
+        /* Margin to fix overlapping fixed navbar */
+        margin-top: 58px;
+      }
+
+      @media (max-width: 991px) {
+        #intro {
+          /* Margin to fix overlapping fixed navbar */
+          margin-top: 45px;
+        }
+      }
+    </style>
+</head>
+
+<body>
+  <header>
+    <nav id="nav" class="navbar navbar-expand-lg navbar-light  fixed-top" style="background-color: white;">
+      <div class="container-fluid">
+        <a class="navbar-brand"  href="hlavniStrana.html">
+          <img src="data:image/png;base64,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"
+            height="20" alt="logo" loading="lazy" style="margin-top: -3px;">
+            </a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button"
+                data-mdb-toggle="dropdown" aria-expanded="false" style="color:black;">
+                Základní informace
+              </a>
+              <ul class="dropdown-menu navigace" aria-labelledby="navbarDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" href="hlavniStrana.html">Úvodní stránka</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Všeobecné informace</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Charakteristika školy</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Denní studium</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Naši lektoři</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button"
+                data-mdb-toggle="dropdown" aria-expanded="false" style="color:black;">
+                Kurzy
+              </a>
+              <ul class="dropdown-menu navigace" aria-labelledby="navbarDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" href="#">Anglický jazyk &#8211; dochákové kurzy</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Anglický jazyk &#8211; konverzační kurzy</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Anglický jazyk &#8211; přípravné kurzy</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Německý jazyk &#8211; dochákové kurzy</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Německý jazyk &#8211; konverzační kurzy</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink3" role="button"
+                data-mdb-toggle="dropdown" aria-expanded="false" style="color:black;">
+                Jazyková pokročilost
+              </a>
+              <ul class="dropdown-menu navigace" aria-labelledby="navbarDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" href="#">Popis úrovní</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">CEFR</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink4" role="button"
+                data-mdb-toggle="dropdown" aria-expanded="false" style="color:black;">
+                Zkoušky
+              </a>
+              <ul class="dropdown-menu navigace" aria-labelledby="navbarDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" href="#">Cambridge exams</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Goethe Zertifikat b1</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Státní jazykové zkoušky</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="clanek.html">Mezinárodní jazykové zkoušky</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Čeština pro cizince A1</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Čeština pro cizince A2</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Osvědčení o znalosti jazyka</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink5" role="button"
+                data-mdb-toggle="dropdown" aria-expanded="false" style="color:black;">
+                Další informace
+              </a>
+              <ul class="dropdown-menu navigace" aria-labelledby="navbarDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" href="#">Otázky a odpovědi</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Zveřejňování informací</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Projekt ESF</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav d-flex flex-row">
+
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="#!" rel="nofollow" target="_blank" style="color:black;">
+                <i class="fa fa-phone" style="color:black;"></i> Kontakt
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="#!" rel="nofollow" target="_blank" style="color:black;">
+                GJŠ Zlín
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="intro" class="p-5 text-center  baner">
+      <h1 class="mb-0 h4" style="font-size: 2rem;">JAZYKOVÁ ŠKOLA S&nbsp;PRÁVEM STÁTNÍ JAZYKOVÉ ZKOUŠKY ZLÍN
+      </h1>
+    </div>
+  </header>
+
+
+  <main class="mt-4 mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8  obrazek">
+          <section class="border-bottom" style="padding-bottom: 2.1rem;">
+			  <h2 hidden>info</h2>
+            <img src="https://www.daysoftheyear.com/wp-content/uploads/world-student-day1.jpg"
+              class="img-fluid shadow-2-strong rounded mb-4" alt="uvodni foto">
+            <div class="row align-items-center mb-4">
+            </div>
+          </section>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              <section class=" mb-2">
+                <div class="card  zluta">
+                  <div class="card-body">
+                    <h5 class="card-title text-center nadpisTucne">Kdo jsme?</h5>
+                    <ul>
+                      <li class="bod">Jazyková škola s širokou nabídkou kurzů</li>
+                      <li class="bod">Naše kurzy vás připraví na státní jazykové zkoušky i zkoušky s mezinárodní
+                        platností
+                      </li>
+                      <li class="bod">Výuka je dynamická, zábavná a efektivní</li>
+                      <li class="bod">Vyučující jsou aprobovaní učitelé s výbornými jazykovými znalostmi</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="col-md-12 mb-4">
+              <section class="border-bottom mb-4 pb-4">
+                <div class="card  zluta">
+                  <div class="card-body">
+                    <h5 class="card-title text-center nadpisTucne">Kde nás najdete?</h5>
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2606.0034541887258!2d17.66471121627143!3d49.21946158316821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4713734f7752ae75%3A0xa5092748cd99c6e6!2zR3ltbsOheml1bSBhIEphenlrb3bDoSDFoWtvbGEgcyBwcsOhdmVtIHN0w6F0bsOtIGphenlrb3bDqSB6a291xaFreSBabMOtbg!5e0!3m2!1scs!2scz!4v1675430390453!5m2!1scs!2scz"
+                        style="border:0;" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </div>
+                <div class="row align-items-center mb-4">
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-8 mb-4">
+          <div class="row">
+            <div class="col-6 mb-4">
+              <div class="card">
+                <div
+                class="bg-image hover-overlay ripple  rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg" alt="x"
+                  class="w-100">
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2);"
+                  ></div>
+                </a>
+              </div>
+                <div class="card-body">
+                  <h5 class="card-title">Learn with Gert</h5>
+                  <p class="card-text">Lekce němčiny s rodilým mluvčím.</p>
+                  <p class="card-text">Individuální nebo skupinové lekce</p>
+                  <p class="card-text">Od 2 500 Kč/rok</p>
+                  <a href="#!" class="btn" style="background-color: hsl(206, 58%, 21%);color: white;">Více informací</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 mb-4">
+              <div class="card">
+                <div
+                class="bg-image hover-overlay ripple  rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="https://t3.ftcdn.net/jpg/02/79/78/48/360_F_279784836_4eKMjfIfDtaICKmaSBAyft2Y43u5V76Q.jpg" alt="x"
+                  class="w-100">
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2);"
+                  ></div>
+                </a>
+              </div>
+                <div class="card-body">
+                  <h5 class="card-title">Learn with Olu</h5>
+                  <p class="card-text">Lekce angličtiny s rodilým mluvčím.</p>
+                  <p class="card-text">Individuální nebo skupinové lekce</p>
+                  <p class="card-text">Od 3 000 Kč/rok</p>
+                  <a href="#!" class="btn " style="background-color: hsl(206, 58%, 21%);color: white;">Více informací</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="hr hr-blurry">
+          <h2 class="mainNadpis">Aktuality</h2>
+          <div class="mb-5">
+            <section>
+				<h2 hidden>Info</h2>
+              <section style="margin-top: 2rem;" class="text-center  pb-2 ">
+                <h3 class="clanekNadpis">VÝSLEDKY ZKOUŠKY A2 – TRVALÝ POBYT ZE DNE 18. 1. 2023</h3>
+              </section>
+              01-A2ABJYBRUJ – uspěl <br>
+              02-A2ABJ2GNEU – uspěl <br>
+              03-A2ABJLZJ7W – neuspěl <br>
+              04-A2ABJD3G7E – neuspěl<br>
+              05-A2ABJAIQOM – uspěl<br>
+              06-A2ABJ8TSW5 – uspěl<br>
+              07-A2ABJFPJ9E – uspěl<br>
+              08-A2ABJVCD4L – uspěl<br>
+              09-A2ABJ2KK8F – uspěl<br>
+              10-A2ABJX8M4O – uspěl.<br>
+              <p class="note note-light mt-3 poznamka " style="border-color: hsl(206, 58%, 21%);;">
+                <strong>Poznámka:</strong> Osvědčení Vám bude zasláno poštou. Pokud jste v přihlášce uvedli, že si
+                osvědčení vyzvednete osobně, můžete tak učinit v kanceláři školy č. 201.
+              </p>
+            </section>
+          </div>
+          <hr class=" hr hr-blurry">
+          <div class="mb-5 mt-3">
+            <section>
+				<h2 hidden>Info</h2>
+              <section style="margin-top: 3rem;" class="text-center  pb-2 ">
+                <h3 class="clanekNadpis">REGISTRACE NA CAMBRIDGESKÉ ZKOUŠKY JARO, LÉTO 2023</h3>
+              </section>
+              Informace o zkouškách najdete v sekci zkoušky/Cambridge exams. <br>
+
+              Další informace jsou k dispozici v kanceláři školy nebo na jirikovska@gjszlin.cz
+            </section>
+          </div>
+          <hr class=" hr hr-blurry">
+          <div class="mb-5 mt-3">
+            <section>
+				<h2 hidden>Info</h2>
+              <section style="margin-top: 3rem;" class="text-center  pb-2 ">
+                <h3 class="clanekNadpis">PF 2023</h3>
+              </section>
+              <div class="row">
+                <div class="col-sm-6">
+                  <img class="myImg obrazekEfekt" src="http://www.gjszlin.cz/js/images/news/PF2023-2.jpg" alt="PF 2023"
+                    style="width:100%;max-width:300px">
+                </div>
+                <div class="col-sm-6">
+                  <p>Vážení posluchači jazykových kurzů, <br>
+                    rádi bychom vám touto cestou popřáli klidné a pohodové vánoce a mnoho štěstí i osobních a profesních
+                    úspěchů v novém roce 2023. <br></p>
+
+                  <p>Zároveň bychom vám chtěli dát na vědomí, že budova školy bude po dobu vánočních svátků (23. 12.
+                    2022
+                    –
+                    3. 1. 2023) uzavřená a kurzy se opět otevřou dne 3. ledna 2023.</p>
+                </div>
+              </div>
+            </section>
+          </div>
+          <hr class=" hr hr-blurry">
+          <div class="mb-5 mt-3">
+            <section>
+				<h2 hidden>Info</h2>
+              <section style="margin-top: 3rem;" class="text-center  pb-2 ">
+                <h3 class="clanekNadpis">VÝSLEDKY ZKOUŠKY A2 – TRVALÝ POBYT ZE DNE 14. 12. 2022</h3>
+              </section>
+              01-A2ABJEKF4X – uspěl <br>
+              02-A2ABJWDX1T – uspěl <br>
+              03-A2ABJCJ2VQ – uspěl <br>
+              04-A2ABJ975EA – uspěl <br>
+              05-A2ABJLAFJ3 – neuspěl <br>
+              06-A2ABJKYAUF – uspěl <br>
+              07-A2ABJSRREO – uspěl <br>
+              08-A2ABJNJ9IJ – uspěl <br>
+              09-A2ABJJLER7 – uspěl <br>
+              10-A2ABJG7KBF – uspěl. <br>
+              <p class="note note-light mt-3 poznamka " style="border-color: hsl(206, 58%, 21%);;">
+                <strong>Poznámka:</strong> Osvědčení Vám bude zasláno poštou. Pokud jste v přihlášce uvedli, že si
+                osvědčení vyzvednete osobně, můžete tak učinit v kanceláři školy č. 201.
+              </p>
+            </section>
+          </div>
+
+
+
+
+
+
+
+
+        
+          <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img src="modal" class="modal-content" id="img01" alt="x">
+            <div id="caption">PF</div>
+          </div>
+
+        </div>
+        <div class="col-md-4 mb-4">
+          <section id="aside" class="sticky-top" style="top: 80px;">
+			  <h2 hidden>Info</h2>
+            <section class="border-bottom mb-4">
+				<h2 hidden>Info</h2>
+              <div class="col-md-12 mb-4">
+                <section class=" mb-4 ">
+                  <div class="card modra">
+                    <div class="card-body">
+                      <h5 class="card-title text-center nadpisTucne">Cambridgeské zkoušky</h5>
+                      <ul>
+                        <li class="bod">Úrovně A1, A2, B1, B2, C1</li>
+                        <li class="bod">Další informace jsou k dispozici v kanceláři školy nebo na stránkách <a href="https://www.britishcouncil.org/">www.britishcouncil.org</a></li>
+                        <li class="bod">Regitrujte se online <a href="https://esolreg.britishcouncil.org/">www.britishcouncil.org</a></li>
+                      </ul>
+                      <div
+                      class="bg-image hover-overlay ripple  rounded"
+                      data-ripple-color="light"
+                    >
+                      <img
+                        src="img/cambridge.jpg" alt="x"
+                        class="w-100">
+                      <a href="#!">
+                        <div
+                          class="mask"
+                          style="background-color: rgba(251, 251, 251, 0.2);"
+                        ></div>
+                      </a>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="row align-items-center mb-4">
+                  </div>
+                </section>
+              </div>
+            </section>
+            <section>
+              <div class="col-md-12 mb-4">
+                  <div class="card modra">
+                    <div class="card-body">
+                      <h5 class="card-title text-center nadpisTucne">Zkouška z českého jazyka pro cizince</h5>
+                      <ul>
+                        <li class="bod">Zkouška úrovně A2</li>
+                        <li class="bod">Skládá se z písemné a ústní části</li>
+                        <li class="bod">Na zkoušku je možné se přihlásit přes online přihlášku nebo osobně ve škole</li>
+                        <li class="bod">Je vhodné se přihlásit s dostatečným časovým předstihem</li>
+                        <li class="bod">Další informace jsou k dispozici v kanceláři školy nebo na stránkách <a href="https://cestina-pro-cizince.cz/trvaly-pobyt/a2/">cestina-pro-cizince cz</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="row align-items-center mb-4">
+                  </div>
+              </div>
+            </section>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-light text-center">
+    <div class="container p-4 d-flex">
+      <section class="text-center">
+        <div class="row">
+          <h5 style="margin-bottom: 2rem; color: hsl(206, 58%, 21%);">Jsme oficiálními partnery</h5>
+          <div class="col-lg-1 col-3 mb-4 mb-md-0 mx-auto">
+            <div
+              class="bg-image hover-overlay ripple shadow-1-strong rounded"
+              data-ripple-color="light">
+              <img
+                src="https://praha.educanet.cz/wp-content/uploads/2017/12/Cambridge_Assessment_logo.jpg" alt="x"
+                class="w-100">
+              <a href="#!">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.2);"
+                ></div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-1 col-3 mb-4 mb-md-0 mx-auto">
+            <div
+              class="bg-image hover-overlay ripple shadow-1-strong rounded"
+              data-ripple-color="light">
+              <img
+                src="https://lucknow.afindia.org/wp-content/uploads/2022/01/Delf-Dalf_Logo.jpg" alt="x"
+                class="w-100">
+              <a href="#!">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.2);"
+                ></div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-1 col-3 mb-4 mb-md-0 mx-auto">
+            <div
+              class="bg-image hover-overlay ripple shadow-1-strong rounded"
+              data-ripple-color="light"
+            >
+              <img
+                src="https://i1.sndcdn.com/avatars-000244751372-i0r2fe-t500x500.jpg" alt="x"
+                class="w-100">
+              <a href="#!">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.2);"
+                ></div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-1 col-3 mb-4 mb-md-0 mx-auto">
+            <div
+              class="bg-image hover-overlay ripple shadow-1-strong rounded"
+              data-ripple-color="light">
+            <img
+            src="data:image/png;base64,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" alt="x"
+            class="w-100">
+          <a href="#!">
+            <div
+              class="mask"
+              style="background-color: rgba(251, 251, 251, 0.2);"
+            ></div>
+          </a>
+    </div>
+	</div>
+	</div>
+  </section>
+</div>
+    <div class="text-center p-3" style="background-color: hsl(206, 58%, 21%); color: white; font-weight: 600;">
+      JAZYKOVÁ ŠKOLA S&nbsp;PRÁVEM STÁTNÍ JAZYKOVÉ ZKOUŠKY ZLÍN
+    </div>
+  </footer>
+  <script src="js/mdb.min.js"></script>
+  <script src="js/jsEdit.js"></script>
+</body>
+
+</html>
