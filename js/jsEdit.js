@@ -26,6 +26,8 @@ images.forEach(function (img) {
   });
 });
 
+
+
 // Get the <span> element that closes the modal
 let span = document.getElementsByClassName("close")[0];
 
