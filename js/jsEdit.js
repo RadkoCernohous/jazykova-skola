@@ -44,7 +44,6 @@ document.addEventListener('click', function (event) {
   }
 });
 
-
 let sipka = document.createElement('div');
 sipka.innerHTML = '<p> Nahoru <b>&uarr;</b></p > ';
 sipka.style.cssText = `
